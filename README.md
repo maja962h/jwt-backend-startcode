@@ -1,10 +1,10 @@
-# startcode-with-security
+# Startcode for Spring Boot Rest projects, with support for JWT Authentication/Authorization
 
-Clone (prefered) or fork the project
+Clone or fork the project
 If cloned delete the hidden .git folder and do a new git init
 
-Se this [short video](https://www.youtube.com/watch?v=aISFmtX-vfA)
-for how to use the code for the cars'R' Us project and future projects this semester where you need Security
+Se thiss [short video](https://www.youtube.com/watch?v=aISFmtX-vfA)
+I explains how to use it for the cars'R' Us project and but ALSO for future projects this semester where you need Security
 
 ### Short text-version of what the video above goes through
 - Clone (prefered)/fork the project, and do what it takes to create you own git-folder, and after that, git-repo
