@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="max-width: 600px;font-family: sans-serif;margin:20px;">
+    <h2>Cookie and Session Demo</h2>
+    <input id="msg-input">
+    <button id="btn-post-msg">Post Message</button>
+    <hr/>
+    <button id="see-all">See all YOUR messages</button>
+    <p id="messages">&nbsp;</p>
+    <hr/>
+    <button id="btn-dummy-login">Perform a dummy Login</button>
+    <p id="token">&nbsp;</p>
+    <hr>
+    <button id="btn-clear">Clear All Cookies</button>
+</div>
+<script>
+    document.getElementById("btn-post-msg").onclick = function(){
+        const URL = "/api/cookie/save-txt?msg="+document.getElementById("msg-input").value;
+        fetch(URL,{method:"POST"});
+    }
+    document.getElementById("see-all").onclick = async function (){
+        const URL = "/api/cookie/see-all-from-session";
+        const all = await fetch(URL).then(res=>res.json())
+        document.getElementById("messages").innerText = JSON.stringify(all)
+    }
+    document.getElementById("btn-dummy-login").onclick = async function () {
+        const URL = "/api/cookie/dummy-login";
+        await fetch(URL,{method:"POST"}).then(r=>r.text());
+        document.getElementById("token").innerText = "verify that token is stored in a cookie";
+    }
+    document.getElementById("btn-clear").onclick = async function () {
+        const URL = "/api/cookie/clear";
+        await fetch(URL,{method:"POST"});
+        document.getElementById("token").innerText = "All cookie values are cleared";
+    }
+
+</script>
+</body>
+</html>
