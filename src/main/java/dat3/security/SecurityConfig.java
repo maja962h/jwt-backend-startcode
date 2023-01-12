@@ -98,11 +98,11 @@ public class SecurityConfig {
 
             //.antMatchers("/", "/**").permitAll()
 
-           // .antMatchers(HttpMethod.GET,"/api/demo/anonymous").permitAll());
+            .antMatchers(HttpMethod.GET,"/api/demo/anonymous").permitAll());
 
            // Demonstrates another way to add roles to an endpoint
            // .antMatchers(HttpMethod.GET, "/api/demo/admin").hasAuthority("ADMIN")
-    .anyRequest().authenticated());
+    //.anyRequest().authenticated());
 
     return http.build();
   }
